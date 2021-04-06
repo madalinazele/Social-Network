@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialnetwork.controller.LoginController">
+   <children>
+      <HBox layoutY="30.0" prefHeight="64.0" prefWidth="600.0" style="-fx-border-color: #27496d; -fx-border-width: 4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#showLoginPane" prefHeight="50.0" prefWidth="260.0" style="-fx-background-color: #27496d;" text="Login" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="signUpBtn" mnemonicParsing="false" onAction="#showSignUpPane" prefHeight="50.0" prefWidth="260.0" style="-fx-background-color: #000328;" text="SignUp" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="loginPane" layoutY="167.0" prefHeight="281.0" prefWidth="600.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TextField fx:id="usernameIn" layoutX="80.0" layoutY="91.0" prefHeight="40.0" promptText="Username" text="tomPalmer" AnchorPane.bottomAnchor="165.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" />
+            <PasswordField fx:id="passwordIn" layoutX="80.0" layoutY="143.0" prefHeight="40.0" promptText="Password" text="palmer" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" />
+            <TextField fx:id="emailIn" layoutX="80.0" layoutY="37.0" prefHeight="40.0" promptText="Email" text="tompalmer@gmail.com" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" />
+            <Button fx:id="loginBtn2" layoutX="263.0" layoutY="207.0" mnemonicParsing="false" onAction="#loginClicked" prefHeight="43.0" prefWidth="440.0" style="-fx-background-color: #27496d;" text="Login" textFill="WHITE" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="207.0">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signUpPane" layoutY="110.0" prefHeight="280.0" prefWidth="600.0" visible="false">
+         <children>
+            <TextField fx:id="firstName" layoutX="330.0" layoutY="51.0" prefHeight="35.0" prefWidth="240.0" promptText="First Name" AnchorPane.bottomAnchor="186.8" AnchorPane.rightAnchor="30.0" />
+            <TextField fx:id="lastName" layoutX="330.0" layoutY="104.0" prefHeight="35.0" prefWidth="240.0" promptText="Last Name" AnchorPane.bottomAnchor="140.8" AnchorPane.rightAnchor="30.0" />
+            <TextField fx:id="usernameUp" layoutX="40.0" layoutY="104.0" prefHeight="35.0" prefWidth="240.0" promptText="Username" AnchorPane.bottomAnchor="140.8" AnchorPane.leftAnchor="40.0" />
+            <PasswordField fx:id="passwordUp" layoutX="40.0" layoutY="150.0" prefHeight="35.0" prefWidth="240.0" promptText="Password" AnchorPane.bottomAnchor="94.80000000000001" AnchorPane.rightAnchor="320.0" />
+            <TextField fx:id="emailUp" layoutX="330.0" layoutY="150.0" prefHeight="35.0" prefWidth="240.0" promptText="Email" AnchorPane.bottomAnchor="94.80000000000001" AnchorPane.rightAnchor="30.0" />
+            <Button fx:id="signUpBtn2" layoutX="109.0" layoutY="201.0" mnemonicParsing="false" onAction="#signUpClicked" prefHeight="45.0" style="-fx-background-color: #27496d;" text="SignUp" textFill="WHITE" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="110.0">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="profileImg" fitHeight="90.0" fitWidth="109.0" layoutX="40.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_male_user_64px.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="chooseImgUP" layoutX="142.0" layoutY="54.0" mnemonicParsing="false" onMouseClicked="#chooseImgClicked" prefHeight="30.0" prefWidth="137.0" style="-fx-background-color: #27496d;" text="Choose image" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_plus_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="exitIcon" fitHeight="22.0" fitWidth="25.0" layoutX="575.0" layoutY="2.0" onMouseClicked="#exitBtnClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/icons8_multiply_60px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="710.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialnetwork.controller.HomePageController">
+    <Pane prefHeight="122.0" prefWidth="710.0" style="-fx-background-color: #000328;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <effect>
+            <DropShadow />
+        </effect>
+      <children>
+         <ImageView fx:id="profileImage" fitHeight="101.0" fitWidth="112.0" layoutX="32.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@images/reindeer.png" />
+            </image>
+         </ImageView>
+         <Label fx:id="nameLbl" alignment="CENTER" layoutX="239.0" layoutY="37.0" prefHeight="35.0" prefWidth="388.0" text="Nume si Prenume" textFill="WHITE">
+            <font>
+               <Font name="Segoe UI Bold" size="28.0" />
+            </font>
+         </Label>
+      </children>
+    </Pane>
+    <VBox layoutY="215.0" style="-fx-background-color: #cfd3ce;" AnchorPane.leftAnchor="0.0">
+        <children>
+            <Button fx:id="aboutBtn" graphicTextGap="7.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#showAboutPane" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #27496d;" text="About" textFill="WHITE">
+                <font>
+                    <Font name="Segoe UI Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            <graphic>
+               <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@images/icons8_male_user_64px.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <padding>
+               <Insets right="35.0" />
+            </padding>
+            </Button>
+            <Button fx:id="friendsBtn" graphicTextGap="3.0" layoutX="10.0" layoutY="46.0" mnemonicParsing="false" onAction="#showFriendsPane" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #000328;" text="My friends" textFill="WHITE">
+                <font>
+                    <Font name="Segoe UI Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            <graphic>
+               <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@images/icons8_user_groups_64px.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <padding>
+               <Insets right="22.0" />
+            </padding>
+            </Button>
+         <Button fx:id="fRequestsBtn" alignment="CENTER" graphicTextGap="5.0" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onAction="#showRequestsPane" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #000328;" text="Friend requests" textFill="WHITE">
+            <font>
+               <Font name="Segoe UI Bold" size="14.0" />
+            </font>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <graphic>
+               <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@images/icons8_add_user_group_man_man_64px.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button fx:id="deleteAccountBtn" alignment="CENTER" graphicTextGap="5.0" layoutX="10.0" layoutY="111.0" mnemonicParsing="false" onAction="#btnDeleteClicked" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #000328;" text="Delete Account" textFill="WHITE">
+            <font>
+               <Font name="Segoe UI Bold" size="14.0" />
+            </font>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <graphic>
+               <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@images/icons8_trash_64px.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+        </children>
+    </VBox>
+    <AnchorPane fx:id="accountInfoPane" layoutX="170.0" layoutY="104.0" prefHeight="410.0" prefWidth="530.0" style="-fx-background-color: #27496d;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+        <children>
+            <GridPane layoutX="33.0" layoutY="56.0" prefHeight="294.0" prefWidth="430.0" style="-fx-background-color: #000328;">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.80001220703124" minWidth="10.0" prefWidth="132.7999755859375" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.200048828125" minWidth="166.39998779296874" prefWidth="239.2000244140625" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.6000244140625" minWidth="58.39999999999998" prefWidth="59.99997558593748" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <Label prefHeight="26.0" prefWidth="92.0" text="First name:" textFill="WHITE">
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                            <Insets left="15.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label layoutX="10.0" layoutY="27.0" prefHeight="26.0" prefWidth="92.0" text="Last name:" textFill="WHITE" GridPane.rowIndex="1">
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                            <Insets left="15.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label prefHeight="26.0" prefWidth="92.0" text="Email:" textFill="WHITE" GridPane.rowIndex="3">
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                            <Insets left="15.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label layoutX="10.0" layoutY="27.0" prefHeight="26.0" prefWidth="92.0" text="Username:" textFill="WHITE" GridPane.rowIndex="2">
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                            <Insets left="15.0" />
+                        </GridPane.margin>
+                    </Label>
+
+                    <TextField fx:id="txtUpdateFirst" prefHeight="28.0" prefWidth="199.0" promptText="first name" style="-fx-background-color: #000328;" GridPane.columnIndex="1">
+
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                            <Insets />
+                        </GridPane.margin>
+                    </TextField>
+
+                    <TextField fx:id="txtUpdateLast" layoutX="110.0" layoutY="20.0" prefHeight="28.0" prefWidth="199.0" promptText="last name" style="-fx-background-color: #000328;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                    </TextField>
+
+                    <TextField fx:id="txtUpdateUsername" layoutX="110.0" layoutY="70.0" prefHeight="28.0" prefWidth="199.0" promptText="username" style="-fx-background-color: #000328;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                    </TextField>
+
+                    <TextField fx:id="txtUpdateEmail" layoutX="110.0" layoutY="120.0" prefHeight="28.0" prefWidth="199.0" promptText="email" style="-fx-background-color: #000328;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                    </TextField>
+                    <Button fx:id="btnUpdate" graphicTextGap="5.0" mnemonicParsing="false" onAction="#btnUpdateClicked" prefHeight="22.0" prefWidth="132.0" style="-fx-background-color: #27496d;" text="Update" textFill="WHITE" GridPane.rowIndex="6">
+                        <font>
+                            <Font name="Segoe UI Bold" size="16.0" />
+                        </font>
+                  <graphic>
+                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/icons8_user_settings_64px.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                    </Button>
+                    <Label layoutX="25.0" layoutY="148.0" prefHeight="26.0" prefWidth="92.0" text="Password:" textFill="WHITE" GridPane.rowIndex="4">
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                            <Insets left="15.0" />
+                        </GridPane.margin>
+                    </Label>
+
+                    <PasswordField fx:id="txtUpdatePassword" prefHeight="20.0" prefWidth="270.0" promptText="password" style="-fx-background-color: #000328;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+
+                        <font>
+                            <Font name="Segoe UI Bold" size="15.0" />
+                        </font>
+                    </PasswordField>
+               <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                  <image>
+                     <Image url="@images/icons8_edit_file_64px.png" />
+                  </image>
+                  <GridPane.margin>
+                     <Insets left="5.0" />
+                  </GridPane.margin>
+               </ImageView>
+               <ImageView fitHeight="27.0" fitWidth="29.0" layoutX="386.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <image>
+                     <Image url="@images/icons8_edit_file_64px.png" />
+                  </image>
+                  <GridPane.margin>
+                     <Insets left="5.0" />
+                  </GridPane.margin>
+               </ImageView>
+               <ImageView fitHeight="27.0" fitWidth="29.0" layoutX="381.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <image>
+                     <Image url="@images/icons8_edit_file_64px.png" />
+                  </image>
+                  <GridPane.margin>
+                     <Insets left="5.0" />
+                  </GridPane.margin>
+               </ImageView>
+               <ImageView fitHeight="27.0" fitWidth="29.0" layoutX="381.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <image>
+                     <Image url="@images/icons8_edit_file_64px.png" />
+                  </image>
+                  <GridPane.margin>
+                     <Insets left="5.0" />
+                  </GridPane.margin>
+               </ImageView>
+               <ImageView fitHeight="27.0" fitWidth="29.0" layoutX="381.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <image>
+                     <Image url="@images/icons8_edit_file_64px.png" />
+                  </image>
+                  <GridPane.margin>
+                     <Insets left="5.0" />
+                  </GridPane.margin>
+               </ImageView>
+               <Label layoutX="25.0" layoutY="186.0" prefHeight="26.0" prefWidth="106.0" text="Profile picture:" textFill="WHITE" visible="false" GridPane.rowIndex="5">
+                  <font>
+                     <Font name="Segoe UI Bold" size="14.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets left="15.0" />
+                  </GridPane.margin>
+               </Label>
+               <TextField fx:id="txtUpdateImage" layoutX="142.0" layoutY="143.0" prefHeight="28.0" prefWidth="199.0" promptText="image url" style="-fx-background-color: #000328;" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <font>
+                     <Font name="Segoe UI Bold" size="14.0" />
+                  </font>
+               </TextField>
+               <Button fx:id="pictureChooser" alignment="BOTTOM_LEFT" graphicTextGap="5.0" mnemonicParsing="false" onMouseClicked="#changePictureClicked" prefHeight="30.0" prefWidth="229.0" style="-fx-background-color: #000328;" text="Choose profile picture" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <font>
+                     <Font name="Segoe UI Bold" size="15.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="21.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/icons8_plus_64px.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+                </children>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </GridPane>
+            <Label alignment="CENTER" layoutX="53.0" prefHeight="45.0" prefWidth="354.0" text="Account info" textFill="WHITE">
+                <font>
+                    <Font name="Segoe UI Bold" size="28.0" />
+                </font>
+            </Label>
+         <HBox fx:id="activityHBox" layoutX="32.0" layoutY="360.0" spacing="10.0">
+            <children>
+               <DatePicker fx:id="datePicker1" prefHeight="26.0" prefWidth="137.0" />
+               <DatePicker fx:id="datePicker2" prefHeight="26.0" prefWidth="137.0" />
+               <Button fx:id="ActivityBtn" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#ActivityBtnClicked" prefHeight="28.0" prefWidth="135.0" style="-fx-background-color: #000328;" text="Activity" textFill="WHITE">
+                  <font>
+                     <Font name="Segoe UI Bold" size="14.0" />
+                  </font>
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <graphic>
+                     <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/icons8_download_48px_1.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+                  <padding>
+                     <Insets right="18.0" />
+                  </padding>
+                  <effect>
+                     <DropShadow />
+                  </effect>
+               </Button>
+            </children>
+         </HBox>
+        </children>
+        <effect>
+            <DropShadow />
+        </effect>
+    </AnchorPane>
+    <AnchorPane fx:id="friendsPane" layoutX="172.0" layoutY="107.0" prefHeight="410.0" prefWidth="530.0" style="-fx-background-color: #27496d;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+        <children>
+            <Label alignment="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="42.0" prefWidth="362.0" text="Friends" textFill="WHITE" AnchorPane.bottomAnchor="354.0">
+                <font>
+                    <Font name="Segoe UI Bold" size="28.0" />
+                </font>
+            </Label>
+            <GridPane layoutX="25.0" layoutY="81.0" prefHeight="306.0" prefWidth="472.0" style="-fx-background-color: #27496d;">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="383.799951171875" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="126.60001220703126" minHeight="10.0" prefHeight="38.40001220703125" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="293.6" minHeight="10.0" prefHeight="268.79998779296875" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="414.0">
+                        <children>
+                            <ImageView fitHeight="23.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@images/icons8_search_64px_1.png" />
+                                </image>
+                                <HBox.margin>
+                                    <Insets left="2.0" right="2.0" top="3.0" />
+                                </HBox.margin>
+                            </ImageView>
+                            <TextField fx:id="searchBarFriends" prefHeight="26.0" prefWidth="346.0" promptText="Search">
+                                <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                </HBox.margin>
+                            </TextField>
+                            <ChoiceBox fx:id="datePickerFriends" prefHeight="26.0" prefWidth="188.0">
+                        <HBox.margin>
+                           <Insets left="2.0" />
+                        </HBox.margin></ChoiceBox>
+                        </children>
+                    </HBox>
+               <Pagination fx:id="friendsPaging" prefHeight="265.0" prefWidth="472.0" GridPane.rowIndex="1" />
+               <Label fx:id="noFriendsLbl" alignment="CENTER" prefHeight="46.0" prefWidth="290.0" text="No friends!" textFill="WHITE" visible="false" GridPane.rowIndex="1">
+                  <font>
+                     <Font name="Segoe UI Bold" size="20.0" />
+                  </font>
+                  <GridPane.margin>
+                     <Insets bottom="180.0" left="100.0" />
+                  </GridPane.margin>
+               </Label>
+                </children>
+            </GridPane>
+        </children>
+        <effect>
+            <DropShadow height="15.28" radius="7.975" width="18.62" />
+        </effect>
+    </AnchorPane>
+   <AnchorPane fx:id="frequestsPane" layoutX="179.0" layoutY="122.0" prefHeight="410.0" prefWidth="530.0" style="-fx-background-color: #27496d;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+      <children>
+         <HBox layoutX="14.0" layoutY="-10.0" prefHeight="36.0" prefWidth="530.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <Button fx:id="fRequestBtn" mnemonicParsing="false" onAction="#showFrRequests" prefHeight="38.0" prefWidth="270.0" style="-fx-background-color: #27496d;" text="Friends Requests" textFill="WHITE">
+                  <font>
+                     <Font name="Segoe UI Bold" size="14.0" />
+                  </font>
+               </Button>
+               <Button fx:id="sentFRBtn" mnemonicParsing="false" onAction="#showSentFrRequests" prefHeight="36.0" prefWidth="270.0" style="-fx-background-color: #000328;" text="Sent Requests" textFill="WHITE">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+                  <font>
+                     <Font name="Segoe UI Bold" size="14.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
+         <AnchorPane fx:id="friendRPane" layoutY="45.0" prefHeight="371.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+               <ScrollPane fx:id="friendRequestsScroll" fitToHeight="true" fitToWidth="true" layoutX="35.0" layoutY="44.0" prefHeight="286.0" prefWidth="462.0" style="-fx-background-color: #27496d;" visible="false">
+                  <content>
+                     <VBox fx:id="friendRequestsVBox" prefHeight="278.0" prefWidth="448.0" style="-fx-background-color: #27496d;" />
+                  </content>
+               </ScrollPane>
+               <Label fx:id="noFrLbl" alignment="CENTER" layoutX="120.0" layoutY="91.0" prefHeight="46.0" prefWidth="290.0" text="No friend requests!" textFill="WHITE">
+                  <font>
+                     <Font name="Segoe UI Bold" size="20.0" />
+                  </font>
+               </Label>
+               <Pagination fx:id="receivedFrPaged" layoutX="36.0" layoutY="44.0" prefHeight="294.0" prefWidth="462.0" style="-fx-background-color: #27496d;" />
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="sentFrPane" layoutX="38.0" layoutY="97.0" prefHeight="371.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+               <ScrollPane fx:id="sentFRScroll" fitToHeight="true" fitToWidth="true" layoutX="34.0" layoutY="48.0" prefHeight="286.0" prefWidth="462.0" style="-fx-background-color: #27496d;" visible="false">
+                  <content>
+                     <VBox fx:id="sentFRVBox" prefHeight="278.0" prefWidth="448.0" style="-fx-background-color: #27496d;" />
+                  </content>
+               </ScrollPane>
+               <Label fx:id="noFrLblSent" alignment="CENTER" layoutX="120.0" layoutY="90.0" prefHeight="46.0" prefWidth="290.0" text="No friend requests!" textFill="WHITE" visible="false">
+                  <font>
+                     <Font name="Segoe UI Bold" size="20.0" />
+                  </font>
+               </Label>
+               <Pagination fx:id="sentFrPaged" layoutX="36.0" layoutY="44.0" prefHeight="294.0" prefWidth="462.0" />
+            </children>
+         </AnchorPane>
+      </children>
+      <effect>
+         <DropShadow height="15.28" radius="7.975" width="18.62" />
+      </effect>
+   </AnchorPane>
+    <effect>
+        <DropShadow />
+    </effect>
+</AnchorPane>

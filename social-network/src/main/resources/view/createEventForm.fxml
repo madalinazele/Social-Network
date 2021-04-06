@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="395.0" prefWidth="596.0" style="-fx-background-color: #000328;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialnetwork.controller.AddEventWindow">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="23.0" layoutY="43.0" prefHeight="350.0" prefWidth="356.0" style="-fx-background-color: #000328;" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="38.0">
+         <content>
+            <VBox fx:id="textVBox" prefHeight="343.0" prefWidth="354.0" spacing="15.0" style="-fx-background-color: #000328;">
+               <children>
+                  <TextField fx:id="titleTxt" minHeight="40.0" promptText="Enter a title">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox spacing="5.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <DatePicker fx:id="datePicker" prefHeight="40.0" prefWidth="246.0" promptText="Select date" />
+                        <ChoiceBox fx:id="hourPicker" prefHeight="40.0" prefWidth="48.0" />
+                        <ChoiceBox fx:id="minutesPicker" layoutX="256.0" layoutY="10.0" prefHeight="40.0" prefWidth="48.0" />
+                     </children>
+                  </HBox>
+                  <TextField fx:id="descriptionTxt" layoutX="10.0" layoutY="65.0" minHeight="40.0" prefHeight="77.0" prefWidth="339.0" promptText="Enter desciption">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <Button fx:id="createEventBtn" graphicTextGap="8.0" layoutX="320.0" layoutY="330.0" mnemonicParsing="false" onAction="#createEventClicked" prefHeight="46.0" prefWidth="197.0" style="-fx-background-color: #27496d;" text="Create event" textFill="WHITE" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="18.0">
+         <font>
+            <Font name="Segoe UI Bold" size="20.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_edit_property_64px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="569.0" layoutY="1.0" onMouseClicked="#exitIconClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/icons8_multiply_60px.png" />
+         </image>
+      </ImageView>
+   </children>
+   <padding>
+      <Insets top="5.0" />
+   </padding>
+</AnchorPane>
